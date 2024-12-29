@@ -19,11 +19,11 @@ class Prediction(db.Model):
     predicted_value = db.Column(db.Float, nullable=False)
 
 # Load the machine learning model and columns from pickle and JSON files
-with open('C:/Users/gauri kad/OneDrive/Desktop/web dev/E2E project/House_price_predction/model/banglore_home_prices_model.pickle', 'rb') as f:
+with open('C:\\Users\\gauri kad\\OneDrive\\Desktop\\web dev\\E2E project\\House_price_predction\\Bengaluru-house-price-prediction\\House_price_predction\\banglore_home_prices_model.pickle', 'rb') as f:
     model = pickle.load(f)
 
 
-with open('C:/Users/gauri kad/OneDrive/Desktop/web dev/E2E project/House_price_predction/model/columns.json', 'r') as f:
+with open('C:\\Users\\gauri kad\\OneDrive\\Desktop\\web dev\\E2E project\\House_price_predction\\Bengaluru-house-price-prediction\\House_price_predction\\columns.json', 'r') as f:
     data_columns = json.load(f)['data_columns']
 
 # Extract locations from the data columns (assuming locations start from index 3)
