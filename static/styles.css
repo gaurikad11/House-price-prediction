@@ -1,0 +1,176 @@
+/* styles.css */
+html, body {
+  height: 100%; /* Ensure the entire page height is covered */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/images/image.png);
+  background-size: cover; /* Make the background image cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-attachment: fixed; /* Make sure the background stays in place on scroll */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Ensure it covers the viewport even if the content is small */
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.navbar {
+  background-color: #1b1b1b; /* $gray-800 */
+  z-index: 1030; /* Ensure it is above other elements */
+  position: relative; /* Explicitly set its position */
+  margin-bottom: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  padding: 5px 15px; /* Reduced padding */
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Vertically center the logo */
+}
+
+
+.navbar .navbar-brand {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+}
+.navbar .navbar-brand img {
+  width: 35px; /* Adjust to your desired size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  color: #FAFAFA;
+}
+
+
+/* Style for the card */
+.card {
+  background: linear-gradient(#FAFAFA);
+  width: 10rem; /* Smaller card size */
+  box-shadow: 0 6px 10px #201f1f; /* Shadow effect for the card */
+  border-radius: 8px; /* Slightly rounded corners */
+  border: none; /* Remove default border */
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 150px; /* Add a bottom margin to ensure spacing between card and footer */
+  color: #434242;
+  text-align: center;
+  overflow: visible !important; /* Ensure the dropdown is not clipped */
+}
+.container {
+    overflow: visible !important; /* Ensure dropdown is not constrained */
+    padding: 20px; /* Add padding for spacing */
+    flex-grow: 1; /* Allow container to grow and adjust based on content */
+}
+
+/* Style for input boxes and dropdown */
+.form-control,
+.form-select {
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Rounded edges */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+  z-index: 1050;
+}
+
+.form-control:hover,
+.form-select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Style for the predict price button */
+.btn-primary {
+  background-color: #323232; /* Bootstrap primary color */
+  border-color: #070707;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #181919; /* Darker shade on hover */
+  border-color: #060606;
+}
+
+/* Style for the success message */
+.alert-success {
+  color: #1F2937; /* $gray color */
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #C0C0C0; /* Light background */
+  border: 1px solid #dcdcdc; /* Subtle border */
+  border-color: #797777;
+}
+
+
+/* Main content should expand to fill available space */
+main {
+  flex: 1; /* Push footer to the bottom */
+}
+
+/* Footer styles */
+footer {
+  background-color: #343a40; /* Dark background color */
+  color: white; /* White text color */
+  padding: 0px 15px; /* Adjusted padding for better spacing */
+  font-family: Arial, sans-serif; /* Consistent font style */
+}
+
+footer h5 {
+  font-weight: bold; /* Bold section titles */
+  margin-bottom: 10px; /* Space below titles */
+  font-size: 20px; /* Slightly larger font for headings */
+  padding: 0 50px;
+}
+
+footer p, 
+footer ul {
+  margin: 0;
+  padding: 0px 50px;
+  list-style: none; /* Remove list bullets */
+}
+
+footer ul li {
+  margin-bottom: 5px; /* Space between list items */
+  padding: 0px 50px;
+
+}
+
+footer ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* White link color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+footer ul li a:hover {
+  color: #adb5bd; /* Lighter gray for hover effect */
+}
+
+footer small {
+  font-size: 14px; /* Smaller font for copyright notice */
+  display: block;
+  margin-top: 0; /* Space above copyright text */
+  margin-bottom: 0px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer .row {
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  footer .col-md-4 {
+    margin-bottom: 20px; /* Space between sections on small screens */
+  }
+}
+
+
+.container {
+  max-width: 1200px; /* Ensure container doesn't become too wide */
+  padding: 0 15px; /* Add padding to the container */
+}
+
