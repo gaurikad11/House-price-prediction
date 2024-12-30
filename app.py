@@ -3,10 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 import pickle
 import json
 import numpy as np
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Initialize Flask app and configure PostgreSQL URI
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://neondb_owner:GdePyt18WZDU@ep-icy-thunder-a1sp5kqd.ap-southeast-1.aws.neon.tech/neondb?sslmode=require'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize SQLAlchemy

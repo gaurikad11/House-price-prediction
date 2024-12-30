@@ -8,16 +8,14 @@ html, body {
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/images/image.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url(/static/images/image.png) no-repeat center center fixed; 
   background-size: cover; /* Make the background image cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent repeating */
-  background-attachment: fixed; /* Make sure the background stays in place on scroll */
-  background-position: center; /* Center the image */
   min-height: 100vh; /* Ensure it covers the viewport even if the content is small */
   font-family: 'Roboto', sans-serif;
 }
 
-
+/* Navbar styles */
 .navbar {
   background-color: #1b1b1b; /* $gray-800 */
   z-index: 1030; /* Ensure it is above other elements */
@@ -29,27 +27,26 @@ body {
   align-items: center; /* Vertically center the logo */
 }
 
-
 .navbar .navbar-brand {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
 }
+
 .navbar .navbar-brand img {
   width: 35px; /* Adjust to your desired size */
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Space between logo and text */
 }
 
-
+/* Heading styles */
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   color: #FAFAFA;
 }
 
-
-/* Style for the card */
+/* Card styles */
 .card {
   background: linear-gradient(#FAFAFA);
   width: 10rem; /* Smaller card size */
@@ -62,16 +59,17 @@ h1 {
   text-align: center;
   overflow: visible !important; /* Ensure the dropdown is not clipped */
 }
+
 .container {
-    overflow: visible !important; /* Ensure dropdown is not constrained */
-    padding: 20px; /* Add padding for spacing */
-    flex-grow: 1; /* Allow container to grow and adjust based on content */
+  overflow: visible !important; /* Ensure dropdown is not constrained */
+  padding: 20px; /* Add padding for spacing */
+  flex-grow: 1; /* Allow container to grow and adjust based on content */
+  max-width: 1200px; /* Ensure container doesn't become too wide */
 }
 
 /* Style for input boxes and dropdown */
 .form-control,
 .form-select {
-  
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
   border: 1px solid #ccc; /* Subtle border */
   border-radius: 4px; /* Rounded edges */
@@ -106,7 +104,6 @@ h1 {
   border-color: #797777;
 }
 
-
 /* Main content should expand to fill available space */
 main {
   flex: 1; /* Push footer to the bottom */
@@ -116,7 +113,7 @@ main {
 footer {
   background-color: #343a40; /* Dark background color */
   color: white; /* White text color */
-  padding: 0px 15px; /* Adjusted padding for better spacing */
+  padding: 10px 15px; /* Adjusted padding for better spacing */
   font-family: Arial, sans-serif; /* Consistent font style */
 }
 
@@ -130,14 +127,12 @@ footer h5 {
 footer p, 
 footer ul {
   margin: 0;
-  padding: 0px 50px;
+  padding: 0 50px;
   list-style: none; /* Remove list bullets */
 }
 
 footer ul li {
   margin-bottom: 5px; /* Space between list items */
-  padding: 0px 50px;
-
 }
 
 footer ul li a {
@@ -154,11 +149,15 @@ footer small {
   font-size: 14px; /* Smaller font for copyright notice */
   display: block;
   margin-top: 0; /* Space above copyright text */
-  margin-bottom: 0px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Ensure responsiveness */
+    background-position: top; /* Adjust for smaller screens */
+  }
+
   footer .row {
     text-align: center; /* Center text for smaller screens */
   }
@@ -168,9 +167,18 @@ footer small {
   }
 }
 
+@media (max-width: 576px) {
+  body {
+    background-attachment: scroll;
+    background-size: contain; /* Fit background to screen */
+  }
 
-.container {
-  max-width: 1200px; /* Ensure container doesn't become too wide */
-  padding: 0 15px; /* Add padding to the container */
+  .card {
+    width: 100%; /* Adjust card width for small screens */
+    margin-bottom: 20px;
+  }
+
+  footer h5, footer ul {
+    padding: 0 15px; /* Reduce padding for smaller screens */
+  }
 }
-
