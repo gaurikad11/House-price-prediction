@@ -1,31 +1,27 @@
-/* styles.css */
+/* General styles */
 html, body {
-  height: 100%; /* Ensure the entire page height is covered */
+  height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
+  flex-direction: column;
 }
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/images/image.png);
-  background-size: cover; /* Make the background image cover the entire viewport */
-  background-repeat: no-repeat; /* Prevent repeating */
-  background-attachment: fixed; /* Make sure the background stays in place on scroll */
-  background-position: center; /* Center the image */
-  min-height: 100vh; /* Ensure it covers the viewport even if the content is small */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
-  background-color: #1b1b1b; /* $gray-800 */
-  z-index: 1030; /* Ensure it is above other elements */
-  position: relative; /* Explicitly set its position */
-  margin-bottom: 1px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-  padding: 5px 15px; /* Reduced padding */
-  display: flex; /* Enable flexbox */
-  align-items: center; /* Vertically center the logo */
+  background-color: #1b1b1b;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar .navbar-brand {
@@ -33,187 +29,167 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
 }
+
 .navbar .navbar-brand img {
-  width: 35px; /* Adjust to your desired size */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 10px; /* Space between logo and text */
+  width: 35px;
+  height: auto;
+  margin-right: 10px;
 }
 
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   color: #FAFAFA;
+  text-align: center;
 }
 
-/* Style for the card */
 .card {
   background: linear-gradient(#FAFAFA);
-  width: 10rem; /* Smaller card size */
-  box-shadow: 0 6px 10px #201f1f; /* Shadow effect for the card */
-  border-radius: 8px; /* Slightly rounded corners */
-  border: none; /* Remove default border */
+  width: 100%; /* Occupy full width of the container */
+  max-width: 90%; /* Constrain width on smaller screens */
+  box-shadow: 0 6px 10px #201f1f;
+  border-radius: 8px;
+  border: none;
   font-family: 'Arial', sans-serif;
-  margin-bottom: 150px; /* Add a bottom margin to ensure spacing between card and footer */
+  margin: 0 auto 20px; /* Center the card horizontally */
   color: #434242;
   text-align: center;
-  overflow: visible !important; /* Ensure the dropdown is not clipped */
-}
-.container {
-    overflow: visible !important; /* Ensure dropdown is not constrained */
-    padding: 20px; /* Add padding for spacing */
-    flex-grow: 1; /* Allow container to grow and adjust based on content */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  margin-bottom: 110px;
 }
 
-/* Style for input boxes and dropdown */
+.container {
+  padding: 20px;
+  flex-grow: 1;
+}
+
 .form-control,
 .form-select {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  border: 1px solid #ccc; /* Subtle border */
-  border-radius: 4px; /* Rounded edges */
-  transition: box-shadow 0.3s ease-in-out; /* Smooth hover effect */
-  z-index: 1050;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .form-control:hover,
 .form-select:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Style for the predict price button */
 .btn-primary {
-  background-color: #323232; /* Bootstrap primary color */
+  background-color: #323232;
   border-color: #070707;
   font-weight: bold;
 }
 
 .btn-primary:hover {
-  background-color: #181919; /* Darker shade on hover */
+  background-color: #181919;
   border-color: #060606;
 }
 
-/* Style for the success message */
 .alert-success {
-  color: #1F2937; /* $gray color */
+  color: #1F2937;
+  background-color: #C0C0C0;
+  border: 1px solid #dcdcdc;
   font-size: 1rem;
-  font-weight: bold;
-  background-color: #C0C0C0; /* Light background */
-  border: 1px solid #dcdcdc; /* Subtle border */
-  border-color: #797777;
 }
 
-/* Main content should expand to fill available space */
-main {
-  flex: 1; /* Push footer to the bottom */
-}
-
-/* Footer styles */
 footer {
-  background-color: #343a40; /* Dark background color */
-  color: white; /* White text color */
-  padding: 0px 15px; /* Adjusted padding for better spacing */
-  font-family: Arial, sans-serif; /* Consistent font style */
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 footer h5 {
-  font-weight: bold; /* Bold section titles */
-  margin-bottom: 10px; /* Space below titles */
-  font-size: 20px; /* Slightly larger font for headings */
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 0 50px;
+  font-size: 22px;
+}
+
+footer p {
+  margin: 0; /* Remove default margin of the paragraph */
   padding: 0 50px;
 }
 
-footer p, 
 footer ul {
-  margin: 0;
-  padding: 0px 50px;
-  list-style: none; /* Remove list bullets */
+  list-style: none;
+  padding: 0;
+  padding: 0 50px;
 }
 
 footer ul li {
-  margin-bottom: 5px; /* Space between list items */
-  padding: 0px 50px;
+  margin-bottom: 5px;
+  padding: 0 50px;
 }
 
 footer ul li a {
-  text-decoration: none; /* Remove underline from links */
-  color: white; /* White link color */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
 }
 
 footer ul li a:hover {
-  color: #adb5bd; /* Lighter gray for hover effect */
+  color: #adb5bd;
 }
 
 footer small {
-  font-size: 14px; /* Smaller font for copyright notice */
+  font-size: 14px;
   display: block;
-  margin-top: 0; /* Space above copyright text */
-  margin-bottom: 0px;
+  text-align: center;
+  padding: 0 50px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar .navbar-brand {
-    font-size: 20px; /* Adjust font size for smaller screens */
-  }
-
-  .navbar .navbar-brand img {
-    width: 30px; /* Adjust logo size for smaller screens */
-  }
-
+/* Media Queries */
+@media (max-width: 768px) { /* Tablet */
   h1 {
-    font-size: 30px; /* Adjust heading size for smaller screens */
+    font-size: 32px;
   }
-
   .card {
-    width: 100%; /* Make card full width on smaller screens */
-    margin-bottom: 20px; /* Adjust margin for smaller screens */
+    width: 90%; /* Reduce the width slightly */
+    margin: 20px auto;
   }
+  footer {
+    text-align: center;
 
-  .container {
-    padding: 10px; /* Adjust padding for smaller screens */
   }
-
-  footer .row {
-    text-align: center; /* Center text for smaller screens */
-  }
-
-  footer .col-md-4 {
-    margin-bottom: 20px; /* Space between sections on small screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar .navbar-brand {
-    font-size: 18px; /* Further adjust font size for extra small screens */
-  }
-
-  .navbar .navbar-brand img {
-    width: 25px; /* Further adjust logo size for extra small screens */
-  }
-
-  h1 {
-    font-size: 25px; /* Further adjust heading size for extra small screens */
-  }
-
-  .card {
-    width: 100%; /* Make card full width on extra small screens */
-    margin-bottom: 15px; /* Adjust margin for extra small screens */
-  }
-
-  .container {
-    padding: 5px; /* Adjust padding for extra small screens */
-  }
-
   footer h5 {
-    font-size: 18px; /* Adjust footer heading size for extra small screens */
-  }
+    font-size: 20px;
 
-  footer small {
-    font-size: 12px; /* Adjust footer small text size for extra small screens */
+  }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+  
+  footer ul li {
+    margin-bottom: 5px;
+    padding: 0 10px;
+  }
+  footer p {
+    margin-bottom: 20px;
   }
 }
 
-.container {
-  max-width: 1200px; /* Ensure container doesn't become too wide */
-  padding: 0 15px; /* Add padding to the container */
+@media (max-width: 480px) { /* Mobile */
+  h1 {
+    font-size: 24px;
+  }
+  .card {
+    width: 95%; /* Make the card almost full width */
+    margin: 15px auto;
+    padding: 10px; /* Add padding for smaller screens */
+  }
+  .form-control,
+  .form-select {
+    font-size: 12px;
+  }
+  footer {
+    font-size: 12px;
+
+  }
 }
